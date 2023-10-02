@@ -46,6 +46,6 @@ func main() {
 	}
 	whatAmI(true)
 	whatAmI(1)
-	whatAmI("hey")
+	whatAmI("Test")
 	
 }
