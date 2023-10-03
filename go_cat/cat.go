@@ -8,14 +8,19 @@ import (
 
 func check(e error) {
     if e != nil {
-        panic(e)
+     //   panic(e)
+	 fmt.Println("Error ", e)
+	 os.Exit(1)
     }
 }
 func main() {
-	pathfile := flag.String("f", "file", "f")
+	pathfile := flag.String("f", " ", "f")
 	
 	flag.Parse()
-
+	if *pathfile == " " {
+		fmt.Println("Use -f for define file name and path")
+		os.Exit(1)
+	}
 	fmt.Println("Name of file is ", *pathfile)
 
 	dat, err := os.ReadFile(*pathfile)
