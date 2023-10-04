@@ -7,14 +7,16 @@ import (
 	"os"
 )
 
-func check(e error) { //check errors
+//check errors
+func check(e error) { 
 	if e != nil {
-		//   panic(e)
 		fmt.Println("Error is ", e)
 		os.Exit(1)
 	}
 }
-func countLines(fileName string) { //count all lines in file
+
+//count all lines in file
+func countLines(fileName string) { 
 	file, err := os.Open(fileName)
 	check(err)
 	countLines := 0
@@ -25,7 +27,8 @@ func countLines(fileName string) { //count all lines in file
 	fmt.Println("Number of lines is ", countLines)
 }
 
-func countLinesB(fileName string) { //count not empty lines in file
+//count not empty lines in file
+func countLinesB(fileName string) { 
 	file, err := os.Open(fileName)
 	check(err)
 	countLines := 0
@@ -38,7 +41,9 @@ func countLinesB(fileName string) { //count not empty lines in file
 	}
 	fmt.Println("Number of lines is ", countLines)
 }
-func fileRead(fileName string) { //read and print file
+
+//read and print file
+func fileRead(fileName string) { 
 	dat, err := os.ReadFile(fileName)
 	check(err)
 	fmt.Print(string(dat))
