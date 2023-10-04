@@ -31,9 +31,9 @@ func countLinesB(fileName string) {   //count not empty lines in file
 	countLines :=0
 	fileScanner := bufio.NewScanner(file)
 		for fileScanner.Scan(){
-		//if   != "" {
+		if  fileScanner.Text() != "" {
 			countLines++
-		//}
+		}
 			
 		}
 	fmt.Println("Number of lines is ", countLines)
@@ -51,27 +51,19 @@ func main() {
 
 	flag.Parse()
 	
-	if *pathfile == " " {
-		fmt.Println("Use -f for define file name and path")
-		os.Exit(1)
-	} else {
+	switch {
+	case  len(*pathfile) > 0 :
 		fileRead(*pathfile)
+	
+	case len(*countStrings) > 0 :
+		countLines(*countStrings)
+
+	case len(*countStringsB) > 0 :
+		countLinesB(*countStringsB)
+	
+	default:
+    	fmt.Println("Any flags are defined. Use -f for print a file, -n for count strings in a file, -b for count all non empty strings.")
+		os.Exit(1)	
 	}
-
-	countLines(*countStrings)
-
-	countLinesB(*countStringsB)
-
-	//
-	//	fmt.Println("Use -f for define file name and path")
-	//	os.Exit(1)
-	//}
-
-
-	
-
-	
-
-	
 
 }
