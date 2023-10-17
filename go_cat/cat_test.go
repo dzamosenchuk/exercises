@@ -7,7 +7,7 @@ import (
 func TestCountLines (t *testing.T) {
 	//Arange
 	nameFile := "1_test.txt"
-	expected := 5
+	expected := 9
 
 	//Act
 	result := countLines(nameFile)
