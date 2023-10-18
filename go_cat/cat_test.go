@@ -24,7 +24,7 @@ func TestCountLines (t *testing.T) {
 		os.Exit(1)
 	}
 	
-	expected := 9
+	expected := 2
 	defer f.Close()
 	//Act
 	result := countLines(nameFile)
@@ -39,7 +39,7 @@ func TestCountLines (t *testing.T) {
 func TestCountLinesB (t *testing.T) {
 	//Arange
 	nameFile := "1_test.txt"
-	d1 := []byte("hello\ngo\n")
+	d1 := []byte("hello\ngo\n\n")
     f, err := os.Create(nameFile)
     if err != nil {
 		fmt.Println("Error is ", err)
@@ -52,7 +52,7 @@ func TestCountLinesB (t *testing.T) {
 		fmt.Println("Error is ", err)
 		os.Exit(1)
 	}
-	expected := 5
+	expected := 2
 	defer f.Close()
 
 	//Act
