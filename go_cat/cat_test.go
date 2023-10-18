@@ -12,7 +12,12 @@ func TestCountLines (t *testing.T) {
 	nameFile := "1_test.txt"
 	d1 := []byte("hello\ngo\n")
     f, err := os.Create(nameFile)
-    err := os.WriteFile(nameFile, d1, 0644)
+    if err != nil {
+		fmt.Println("Error is ", err)
+		os.Exit(1)
+	}
+	
+	err = os.WriteFile(nameFile, d1, 0644)
     
 	if err != nil {
 		fmt.Println("Error is ", err)
@@ -23,7 +28,7 @@ func TestCountLines (t *testing.T) {
 	defer f.Close()
 	//Act
 	result := countLines(nameFile)
-	
+	defer os.Remove(nameFile)
 	//Assert
 	if result != expected {
 		t.Errorf("Incorrect result. Expected %d, got %d", expected, result)
@@ -34,11 +39,25 @@ func TestCountLines (t *testing.T) {
 func TestCountLinesB (t *testing.T) {
 	//Arange
 	nameFile := "1_test.txt"
+	d1 := []byte("hello\ngo\n")
+    f, err := os.Create(nameFile)
+    if err != nil {
+		fmt.Println("Error is ", err)
+		os.Exit(1)
+	}
+	
+	err = os.WriteFile(nameFile, d1, 0644)
+    
+	if err != nil {
+		fmt.Println("Error is ", err)
+		os.Exit(1)
+	}
 	expected := 5
+	defer f.Close()
 
 	//Act
 	result := countLinesB(nameFile)
-	
+	defer os.Remove(nameFile)
 	//Assert
 	if result != expected {
 		t.Errorf("Incorrect result. Expected %d, got %d", expected, result)
@@ -49,9 +68,24 @@ func TestCountLinesB (t *testing.T) {
 func TestFileRead(t *testing.T) {
 	//Arange
 	nameFile := "1_test.txt"
-
+	d1 := []byte("hello\ngo\n")
+    f, err := os.Create(nameFile)
+    if err != nil {
+		fmt.Println("Error is ", err)
+		os.Exit(1)
+	}
+	
+	err = os.WriteFile(nameFile, d1, 0644)
+    
+	if err != nil {
+		fmt.Println("Error is ", err)
+		os.Exit(1)
+	}
+	defer f.Close()
 	//Act
 	result := fileRead(nameFile)
+	defer os.Remove(nameFile)
+	
 	//Assert
 	if len(result) == 0 {
 		t.Errorf("Incorrect result. File didn't read.")
