@@ -17,14 +17,9 @@ func check(e error) {
 
 //Count bytes in a file
 func countBytes (fileName string) {
-	file, err := os.Open(fileName)
+	countBytes, err := os.Stat(fileName)
 	check(err)
-	countBytes := 0
-	fileScanner := bufio.NewScanner(file)
-	for fileScanner.Scan() {
-		countBytes++
-	}
-	fmt.Println("Number of bytes is ", countBytes)
+	fmt.Println("Number of bytes is ", countBytes.Size())
 }
 
 //count all lines in file
