@@ -7,23 +7,23 @@ import (
 	"os"
 )
 
-//check errors
-func check(e error) { 
+// check errors
+func check(e error) {
 	if e != nil {
 		fmt.Println("Error is ", e)
 		os.Exit(1)
 	}
-}	
+}
 
-//Count bytes in a file
-func countBytes (fileName string) {
+// Count bytes in a file
+func countBytes(fileName string) {
 	countBytes, err := os.Stat(fileName)
 	check(err)
 	fmt.Println("Number of bytes is ", countBytes.Size())
 }
 
-//count all lines in file
-func countLines(fileName string) { 
+// count all lines in file
+func countLines(fileName string) {
 	file, err := os.Open(fileName)
 	check(err)
 	countLines := 0
@@ -41,7 +41,7 @@ func main() {
 
 	flag.Parse()
 
-switch {
+	switch {
 	case len(*cFlag) > 0:
 		countBytes(*cFlag)
 
