@@ -1,0 +1,16 @@
+mode: set
+/Users/dzamosen/git/exercises/go_cat/cat.go:11.21,12.14 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:12.14,15.3 2 0
+/Users/dzamosen/git/exercises/go_cat/cat.go:19.38,24.25 5 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:24.25,26.3 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:27.2,27.19 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:32.39,37.25 5 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:37.25,38.31 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:38.31,40.4 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:43.2,43.19 1 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:48.39,52.2 3 1
+/Users/dzamosen/git/exercises/go_cat/cat.go:54.13,61.9 5 0
+/Users/dzamosen/git/exercises/go_cat/cat.go:62.26,63.35 1 0
+/Users/dzamosen/git/exercises/go_cat/cat.go:65.30,66.64 1 0
+/Users/dzamosen/git/exercises/go_cat/cat.go:68.31,69.66 1 0
+/Users/dzamosen/git/exercises/go_cat/cat.go:71.10,73.13 2 0

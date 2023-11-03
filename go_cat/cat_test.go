@@ -92,3 +92,14 @@ func TestFileRead(t *testing.T) {
 	}
 
 }
+
+// Test err func
+func errTest(t *testing.T) {
+	type TestData struct {
+		in error
+	}
+	data := []TestData{
+		{in: nil},
+	}
+	for
+}
